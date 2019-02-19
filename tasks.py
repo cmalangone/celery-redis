@@ -8,5 +8,5 @@ app = Celery('tasks', broker=BROKER_URL, backend=BACKEND_URL)
 
 @app.task
 def reverse(string):
-    time.sleep(30)
+    time.sleep(20)
     return string[::-1]
