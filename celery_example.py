@@ -49,8 +49,8 @@ def taskstatus(task_id):
 
 @celery.task(name='celery_example.reverse')
 def reverse(string):
-    current_task.update_state(state='PROGRESS',
-                              meta={'process_percent':'0'})
+    #current_task.update_state(state='PROGRESS',
+    #                          meta={'process_percent':'0'})
 
     time.sleep(20)
     return string[::-1]
