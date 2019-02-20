@@ -3,10 +3,11 @@
 ### Celery Monitor
 redis-cli monitor
 
-### Celery example
+### Celery example - standalone
 celery -A tasks worker --loglevel=info
 
-### Flask application
+### Flask application with Celery
+celery -A celery_example.celery worker --loglevel=info
 python celery_example.py
 
 ### Run a curl request

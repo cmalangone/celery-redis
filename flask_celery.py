@@ -1,7 +1,6 @@
 from celery import Celery, uuid
 #from celery.result import AsyncResult
 
-
 def uuid_celery():
     task_id = uuid()
     return task_id
@@ -13,7 +12,7 @@ def make_celery(app):
         broker=app.config['CELERY_BROKER_URL']
     )
     celery.conf.update(app.config)
-    #TaskBase = celery.Task
+    TaskBase = celery.Task
     class ContextTask(celery.Task):
         def __call__(self, *args, **kwargs):
             with app.app_context():

@@ -1,9 +1,8 @@
 from flask import Flask
-from celery import current_task
 from flask_celery import make_celery, uuid_celery
 import time
-from flask import jsonify
 import random
+from flask import jsonify
 
 app = Flask(__name__)
 app.config['CELERY_BROKER_URL'] = 'redis://localhost:6379/0'
@@ -26,6 +25,7 @@ def process(name):
 def taskstatus(task_id):
     task = celery.AsyncResult(task_id)
     print task.state
+    print task.info
     if task.state == 'PENDING':
         # job did not start yet
         response = {
@@ -47,15 +47,10 @@ def taskstatus(task_id):
         }
     return jsonify(response)
 
-
 @celery.task(name='celery_example.reverse')
 def reverse(string):
-    #current_task.update_state(state='PROGRESS',
-    #                          meta={'process_percent':'0'})
-
     time.sleep(20)
     return string[::-1]
-
 
 if __name__ == '__main__':
     app.run(debug=True)
