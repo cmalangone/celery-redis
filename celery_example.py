@@ -49,7 +49,8 @@ def taskstatus(task_id):
 
 @celery.task(name='celery_example.reverse')
 def reverse(string):
-    time.sleep(20)
+    random_number = random.randint(5, 15)
+    time.sleep(random_number)
     return string[::-1]
 
 if __name__ == '__main__':
