@@ -1,9 +1,9 @@
 # celery-redis
 
 ### Introduction to the topic and good reading
-https://www.youtube.com/watch?v=bqIwPX2HxA4
-https://blog.miguelgrinberg.com/post/using-celery-with-flask
-https://github.com/miguelgrinberg/flask-celery-example
+https://www.youtube.com/watch?v=bqIwPX2HxA4 <br>
+https://blog.miguelgrinberg.com/post/using-celery-with-flask <br>
+https://github.com/miguelgrinberg/flask-celery-example <br>
 
 ### Celery Monitor
 redis-cli monitor
