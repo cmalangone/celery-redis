@@ -1,7 +1,9 @@
 # celery-redis
 
-### Introduction to the topic
+### Introduction to the topic and good reading
 https://www.youtube.com/watch?v=bqIwPX2HxA4
+https://blog.miguelgrinberg.com/post/using-celery-with-flask
+https://github.com/miguelgrinberg/flask-celery-example
 
 ### Celery Monitor
 redis-cli monitor
@@ -36,6 +38,8 @@ curl -X GET http://localhost:5000/status/582db787-cb10-46ba-97ad-eccf6accd5b1
   "state": "SUCCESS",
   "status": "olleh"
 }
+
+
 
 ### Interesting reading: Celery client for Node.js
 https://github.com/mher/node-celery
