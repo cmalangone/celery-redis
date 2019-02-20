@@ -1,5 +1,8 @@
 # celery-redis
 
+### Introduction to the topic
+https://www.youtube.com/watch?v=bqIwPX2HxA4
+
 ### Celery Monitor
 redis-cli monitor
 
