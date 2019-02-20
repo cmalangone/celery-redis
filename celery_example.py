@@ -3,6 +3,7 @@ from celery import current_task
 from flask_celery import make_celery, uuid_celery
 import time
 from flask import jsonify
+import random
 
 app = Flask(__name__)
 app.config['CELERY_BROKER_URL'] = 'redis://localhost:6379/0'
@@ -16,7 +17,7 @@ def process(name):
     print async_result
     response = {
         'uuid': async_result.id,
-        'status': 'http://localhost:5000/status/'+async_result.id,  # this is the exception raised
+        'status': 'curl -X GET http://localhost:5000/status/'+async_result.id,  # this is the exception raised
     }
     return jsonify(response)
 
